@@ -1,0 +1,25 @@
+#display {
+    display: flex;
+    justify-content: right;
+    width: 16em;
+    height: 3em;
+    background-color: burlywood;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 20em;
+    height: 20em;
+    background-color: aqua;
+
+}
+
+.button {
+    height: 5em;
+    width: 5em;
+    background-color: bisque;
+    margin: 0.2em;
+    border: 0.1em black solid;
+}
