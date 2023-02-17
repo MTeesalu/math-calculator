@@ -1,8 +1,10 @@
 let sum;
 let number;
-let array = [];
-let nrString;
-
+let outputArray = [];
+let outputString;
+let operator;
+let a;
+let b;
 
 function add(a, b) {
     sum = a + b;
@@ -42,71 +44,100 @@ function operate(a, b, operator) {
 
 function getNr1() {
     number = 1;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr2() {
     number = 2;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr3() {
     number = 3;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr4() {
     number = 4;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr5() {
     number = 5;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr6() {
     number = 6;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr7() {
     number = 7;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr8() {
     number = 8;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr9() {
     number = 9;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
 function getNr0() {
     number = 0;
-    array.push(number);
+    outputArray.push(number);
     return number;
 }
 
+function getDivide() {
+    operator = "/";
+    outputArray.push(operator);
+    return operator;
+}
+
+function getMultiply() {
+    operator = "*";
+    outputArray.push(operator);
+    return operator;
+}
+
+function getSubtract() {
+    operator = "-";
+    outputArray.push(operator);
+    return operator;
+}
+
+function getAdd() {
+    operator = "+";
+    outputArray.push(operator);
+    return operator;
+}
+
 function convertNrToString() {
-    nrString = array.toString();
-    nrString = nrString.replaceAll(",", "");
-    return nrString;
+    outputString = outputArray.toString();
+    outputString = outputString.replaceAll(",", "");
+    return outputString;
 }
 
 function displayValue() {
     convertNrToString();
-    document.getElementById("display").textContent = nrString;
+    document.getElementById("display").textContent = outputString;
+}
+
+function clearDisplay() {
+    document.getElementById("display").textContent = "";
+    outputArray = [];
 }
