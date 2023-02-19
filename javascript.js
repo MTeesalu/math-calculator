@@ -1,4 +1,5 @@
 let sum;
+let lastSum;
 let number;
 let inputNumbers = [];
 let inputOperators = [];
@@ -160,7 +161,7 @@ function displayOutput() {
 }
 
 function displaySum() {
-    document.getElementById("display").textContent = sum;
+    document.getElementById("display").textContent = lastSum;
 }
 
 function clearDisplay() {
@@ -211,9 +212,12 @@ function operateMultiple(a, b, operator) {
 function calculate() {
     storeNr();
     operate(a = storedNumbers[0], b = storedNumbers[1], operator);
+    lastSum = sum;
+    storeCalcSum();
     console.log(sum);
+    console.log(storedSums);
     displaySum();
     storedNumbers = [];
     clearOutput();
-    storeCalcSum();
+    return lastSum;
 }
