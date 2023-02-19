@@ -183,8 +183,13 @@ function storeNr() {
 }
 
 function storeCalcSum() {
-    storedSums.push(sum);
-    clearSums();
+    let x;
+    if(x = isNaN(sum)) {
+        return;
+    } else {
+        storedSums.push(sum);
+        clearSums();
+    }
 }
 
 function clearSums() {
@@ -196,15 +201,19 @@ function clearOutput() {
     output = [];
 }
 
-function operateMultiple() {
-    operate(a = storedSums[0], b = storedSums[1], operator);
+function operateMultiple(a, b, operator) {
+        a = storedSums[0];
+        b = storedSums[1];
+        operate(a, b, operator);
+        return sum;
 }
 
 function calculate() {
     storeNr();
     operate(a = storedNumbers[0], b = storedNumbers[1], operator);
-    storedNumbers = [];
+    console.log(sum);
     displaySum();
+    storedNumbers = [];
     clearOutput();
     storeCalcSum();
 }
