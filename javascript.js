@@ -1,6 +1,9 @@
 let sum;
 let number;
-let outputArray = [];
+let inputNumbers = [];
+let inputOperators = [];
+let storedNumbers = [];
+let output = [];
 let outputString;
 let operator;
 let a;
@@ -28,116 +31,157 @@ function divide(a, b) {
 
 function operate(a, b, operator) {
     if(operator == "+") {
-        add(a,b);
+        add(a, b);
     }
     if(operator == "-") {
-        subtract(a,b);
+        subtract(a, b);
     }
     if(operator == "*") {
-        multiply(a,b);
+        multiply(a, b);
     }
     if(operator == "/") {
-        divide(a,b);
+        divide(a, b);
     }
     return sum;
 }
 
 function getNr1() {
     number = 1;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr2() {
     number = 2;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr3() {
     number = 3;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr4() {
     number = 4;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr5() {
     number = 5;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr6() {
     number = 6;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr7() {
     number = 7;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr8() {
     number = 8;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr9() {
     number = 9;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getNr0() {
     number = 0;
-    outputArray.push(number);
+    output.push(number);
+    inputNumbers.push(number);
     return number;
 }
 
 function getDivide() {
     operator = "/";
-    outputArray.push(operator);
+    output.push(operator);
+    inputOperators.push(operator);
+    storeNr()
     return operator;
 }
 
 function getMultiply() {
     operator = "*";
-    outputArray.push(operator);
+    output.push(operator);
+    inputOperators.push(operator);
+    storeNr()
     return operator;
 }
 
 function getSubtract() {
     operator = "-";
-    outputArray.push(operator);
+    output.push(operator);
+    inputOperators.push(operator);
+    storeNr()
     return operator;
 }
 
 function getAdd() {
     operator = "+";
-    outputArray.push(operator);
+    output.push(operator);
+    inputOperators.push(operator);
+    storeNr()
     return operator;
 }
 
-function convertNrToString() {
-    outputString = outputArray.toString();
+function convertOutputToString() {
+    outputString = output.toString();
     outputString = outputString.replaceAll(",", "");
     return outputString;
 }
 
 function displayValue() {
-    convertNrToString();
+    convertOutputToString();
     document.getElementById("display").textContent = outputString;
+}
+
+function displaySum() {
+    document.getElementById("display").textContent = sum;
 }
 
 function clearDisplay() {
     document.getElementById("display").textContent = "";
-    outputArray = [];
+    output = [];
+}
+
+function storeNr() {
+    if(inputNumbers.length == 0) {
+        return;
+    } else {
+        inputNumbers = inputNumbers.toString();
+        inputNumbers = inputNumbers.replaceAll(",", "");
+        let nr = parseInt(inputNumbers);
+        storedNumbers.push(nr);
+        inputNumbers = [];
+        return storedNumbers;
+    }
+}
+
+function calculate() {
+    storeNr();
+    operate(a = storedNumbers[0], b = storedNumbers[1], operator);
+    displaySum();
 }
