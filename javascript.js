@@ -3,7 +3,7 @@ let number;
 let inputNumbers = [];
 let inputOperators = [];
 let storedNumbers = [];
-let storedCalcSums = [];
+let storedSums = [];
 let output = [];
 let outputString;
 let operator;
@@ -154,7 +154,7 @@ function convertOutputToString() {
     return outputString;
 }
 
-function displayValue() {
+function displayOutput() {
     convertOutputToString();
     document.getElementById("display").textContent = outputString;
 }
@@ -166,6 +166,7 @@ function displaySum() {
 function clearDisplay() {
     document.getElementById("display").textContent = "";
     output = [];
+    storedSums = [];
 }
 
 function storeNr() {
@@ -182,16 +183,28 @@ function storeNr() {
 }
 
 function storeCalcSum() {
-    storedCalcSums.push(sum);
+    storedSums.push(sum);
+    clearSums();
+}
+
+function clearSums() {
     sum = undefined;
     return sum;
 }
 
+function clearOutput() {
+    output = [];
+}
+
+function operateMultiple() {
+    operate(a = storedSums[0], b = storedSums[1], operator);
+}
 
 function calculate() {
     storeNr();
     operate(a = storedNumbers[0], b = storedNumbers[1], operator);
     storedNumbers = [];
     displaySum();
+    clearOutput();
     storeCalcSum();
 }
