@@ -3,6 +3,7 @@ let number;
 let inputNumbers = [];
 let inputOperators = [];
 let storedNumbers = [];
+let storedCalcSums = [];
 let output = [];
 let outputString;
 let operator;
@@ -180,8 +181,17 @@ function storeNr() {
     }
 }
 
+function storeCalcSum() {
+    storedCalcSums.push(sum);
+    sum = undefined;
+    return sum;
+}
+
+
 function calculate() {
     storeNr();
     operate(a = storedNumbers[0], b = storedNumbers[1], operator);
+    storedNumbers = [];
     displaySum();
+    storeCalcSum();
 }
