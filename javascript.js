@@ -160,7 +160,7 @@ function displayOutput() {
     document.getElementById("display").textContent = outputString;
 }
 
-function displaySum() {
+function displaySum(lastSum) {
     document.getElementById("display").textContent = lastSum;
 }
 
@@ -202,22 +202,41 @@ function clearOutput() {
     output = [];
 }
 
-function operateMultiple(a, b, operator) {
-        a = storedSums[0];
-        b = storedSums[1];
-        operate(a, b, operator);
-        return sum;
+function clearOperator() {
+    operator = null;
+    return operator;
 }
+/*
+function operateMultiple(a, b, operator) {
+    if(storedSums.length == 2) {
+        sum = operate(storedSums[0], storedSums[1], operator);
+    } else {
+        let lastSumInArray = storedSums.slice(-1)[0];
+        let oneBfrLast = storedSums.slice(-2)[0];
+        a = oneBfrLast;
+        b = lastSumInArray;
+        operate(a, b, operator);
+    }
+    return sum;
+}
+*/
 
 function calculate() {
     storeNr();
-    operate(a = storedNumbers[0], b = storedNumbers[1], operator);
+    console.log(storedNumbers);
+    if(storedSums.length >= 1 && operator !== null) {
+        operate(a = lastSum, b = storedNumbers[0], operator);
+        console.log("tere");
+    } else {
+        operate(a = storedNumbers[0], b = storedNumbers[1], operator);
+    }
+    console.log(operator);
     lastSum = sum;
     storeCalcSum();
-    console.log(sum);
     console.log(storedSums);
-    displaySum();
+    displaySum(lastSum);
     storedNumbers = [];
+    clearOperator();
     clearOutput();
     return lastSum;
 }
