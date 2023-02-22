@@ -189,13 +189,7 @@ function storeCalcSum() {
         return;
     } else {
         storedSums.push(sum);
-        clearSums();
     }
-}
-
-function clearSums() {
-    sum = undefined;
-    return sum;
 }
 
 function clearOutput() {
@@ -203,37 +197,19 @@ function clearOutput() {
 }
 
 function clearOperator() {
-    operator = null;
+    operator = undefined;
     return operator;
 }
-/*
-function operateMultiple(a, b, operator) {
-    if(storedSums.length == 2) {
-        sum = operate(storedSums[0], storedSums[1], operator);
-    } else {
-        let lastSumInArray = storedSums.slice(-1)[0];
-        let oneBfrLast = storedSums.slice(-2)[0];
-        a = oneBfrLast;
-        b = lastSumInArray;
-        operate(a, b, operator);
-    }
-    return sum;
-}
-*/
 
 function calculate() {
     storeNr();
-    console.log(storedNumbers);
-    if(storedSums.length >= 1 && operator !== null) {
-        operate(a = lastSum, b = storedNumbers[0], operator);
-        console.log("tere");
-    } else {
+    if(storedSums.length < 1) {
         operate(a = storedNumbers[0], b = storedNumbers[1], operator);
+    } else if(storedSums.length >= 1) {
+        operate(a = lastSum, b = storedNumbers[0], operator);
     }
-    console.log(operator);
-    lastSum = sum;
     storeCalcSum();
-    console.log(storedSums);
+    lastSum = sum;
     displaySum(lastSum);
     storedNumbers = [];
     clearOperator();
