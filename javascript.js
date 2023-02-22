@@ -168,6 +168,11 @@ function clearDisplay() {
     document.getElementById("display").textContent = "";
     output = [];
     storedSums = [];
+    a = undefined;
+    b = undefined;
+    operator = undefined;
+    sum = undefined;
+    lastSum = undefined;
 }
 
 function storeNr() {
@@ -192,27 +197,19 @@ function storeCalcSum() {
     }
 }
 
-function clearOutput() {
-    output = [];
-}
-
-function clearOperator() {
-    operator = undefined;
-    return operator;
-}
-
 function calculate() {
     storeNr();
-    if(storedSums.length < 1) {
+    if(typeof output[0] === "number") {
         operate(a = storedNumbers[0], b = storedNumbers[1], operator);
-    } else if(storedSums.length >= 1) {
+    } else if(storedSums.length = 1) {
         operate(a = lastSum, b = storedNumbers[0], operator);
+        storedSums = [];
     }
     storeCalcSum();
-    lastSum = sum;
-    displaySum(lastSum);
     storedNumbers = [];
-    clearOperator();
-    clearOutput();
+    lastSum = sum;
+    operator = undefined;
+    output = [];
+    displaySum(lastSum);
     return lastSum;
 }
