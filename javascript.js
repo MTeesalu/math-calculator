@@ -27,7 +27,11 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    sum = a / b;
+    if(b === 0) {
+        sum = 1;
+    } else {
+        sum = a / b;
+    }
     return sum;
 }
 
@@ -201,7 +205,7 @@ function calculate() {
     storeNr();
     if(typeof output[0] === "number") {
         operate(a = storedNumbers[0], b = storedNumbers[1], operator);
-    } else if(storedSums.length = 1) {
+    } else if(storedSums.length == 1) {
         operate(a = lastSum, b = storedNumbers[0], operator);
         storedSums = [];
     }

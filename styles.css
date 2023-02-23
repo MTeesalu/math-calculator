@@ -1,25 +1,76 @@
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(27,27,27);
+    background: linear-gradient(90deg, rgba(27,27,27,1) 0%,
+     rgba(59,59,59,1) 99%);
+    width: 38vw;
+    height: 48vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-radius: 1em;
+    border: solid black 0.1em;
+}
+
+.inner-frame {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 34vw;
+    height: 45vh;
+    border: solid black 0.3em;
+    border-radius: 0.6em;
+    background-color: #606060;
+    padding-top: 0.4em;
+}
+
+
 #display {
     display: flex;
     justify-content: right;
-    width: 16em;
-    height: 3em;
-    background-color: burlywood;
+    align-items: center;
+    width: 29vw;
+    height: 6vh;
+    border: solid black 0.2em;
+    border-radius: 0.2em;
+    color: #A50000;
+    font-weight: 900;
+    font-size: 1.8em;
+    padding-top: 0.1vh;
+    padding-bottom: 0.1vh;
+    background: rgb(2,0,36);
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,88,93,1) 36%,
+    rgba(10,60,90,1) 61%, rgba(7,23,93,1) 93%);
 }
 
 .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    width: 20em;
-    height: 20em;
-    background-color: aqua;
-
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: auto;
+    height: auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    border-radius: 0.5em;
 }
 
 .button {
-    height: 5em;
-    width: 5em;
-    background-color: bisque;
+    height: 7vh;
+    width: 7vw;
+    background-color: #2E2D2D;
     margin: 0.2em;
-    border: 0.1em black solid;
+    border: 0.2em black solid;
+    border-radius: 1em;
+    font-weight: 900;
+    font-size: 1em;
+    color: azure;
+}
+
+#clear-button {
+    background-color: #5F0000;
 }
