@@ -1,3 +1,12 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10em;
+    font-family: 'Russo One', sans-serif;
+    background-color: beige;
+}
+
 .calculator {
     display: flex;
     flex-direction: column;
@@ -5,7 +14,7 @@
     background: rgb(27,27,27);
     background: linear-gradient(90deg, rgba(27,27,27,1) 0%,
      rgba(59,59,59,1) 99%);
-    width: 38vw;
+    width: 25vw;
     height: 48vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
@@ -18,12 +27,12 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    width: 34vw;
+    width: 23vw;
     height: 45vh;
     border: solid black 0.3em;
     border-radius: 0.6em;
     background-color: #606060;
-    padding-top: 0.4em;
+    padding-top: 0.8em;
 }
 
 
@@ -31,7 +40,7 @@
     display: flex;
     justify-content: right;
     align-items: center;
-    width: 29vw;
+    width: 20vw;
     height: 6vh;
     border: solid black 0.2em;
     border-radius: 0.2em;
@@ -60,17 +69,52 @@
 }
 
 .button {
-    height: 7vh;
-    width: 7vw;
+    height: 8vh;
+    width: 5vw;
     background-color: #2E2D2D;
     margin: 0.2em;
     border: 0.2em black solid;
     border-radius: 1em;
     font-weight: 900;
-    font-size: 1em;
+    font-size: 1.2em;
     color: azure;
+    box-shadow: 0 0.1em #111111;
+    font-family: 'Russo One', sans-serif;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.button:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 #clear-button {
     background-color: #5F0000;
+}
+
+.number:hover {
+    background-color: #9A9A9A;
+    color: #080808;
+}
+
+#clear-button:hover {
+    background: rgb(223,28,32);
+    background: radial-gradient(circle, rgba(223,28,32,1) 0%,
+     rgba(59,0,0,1) 99%);
+}
+
+.operator:hover {
+    background: rgb(81,248,255);
+    background: radial-gradient(circle, rgba(81,248,255,1) 0%,
+    rgba(38,104,233,1) 99%);
+}
+
+#equals-button:hover {
+    background: rgb(149,255,125);
+    background: radial-gradient(circle, rgba(149,255,125,1) 0%,
+     rgba(0,59,20,1) 99%);
 }
