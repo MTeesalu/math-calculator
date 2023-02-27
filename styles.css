@@ -2,9 +2,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10em;
+    margin-top: 20vh;
     font-family: 'Russo One', sans-serif;
-    background-color: beige;
+    background-color: #E7E1B5;
 }
 
 .calculator {
@@ -18,8 +18,8 @@ body {
     height: 48vh;
     padding-top: 2vh;
     padding-bottom: 2vh;
-    border-radius: 1em;
-    border: solid black 0.1em;
+    border-radius: 1vw;
+    border: solid black 0.1vw;
 }
 
 .inner-frame {
@@ -29,10 +29,10 @@ body {
     align-items: center;
     width: 23vw;
     height: 45vh;
-    border: solid black 0.3em;
-    border-radius: 0.6em;
+    border: solid black 0.2vw;
+    border-radius: 0.6vw;
     background-color: #606060;
-    padding-top: 0.8em;
+    padding-top: 1.6vh;
 }
 
 
@@ -42,13 +42,14 @@ body {
     align-items: center;
     width: 20vw;
     height: 6vh;
-    border: solid black 0.2em;
-    border-radius: 0.2em;
+    border: solid black 0.3vw;
+    border-radius: 0.3vw;
     color: #A50000;
     font-weight: 900;
-    font-size: 1.8em;
+    font-size: 3vh;
     padding-top: 0.1vh;
     padding-bottom: 0.1vh;
+    padding-right: 0.3vw;
     background: rgb(2,0,36);
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(7,88,93,1) 36%,
@@ -61,24 +62,24 @@ body {
     grid-template-rows: repeat(4, 1fr);
     width: auto;
     height: auto;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-top: 0.5em;
-    padding-bottom: 1em;
-    border-radius: 0.5em;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    padding-top: 0.5vh;
+    padding-bottom: 1vh;
+    border-radius: 0.5vw;
 }
 
 .button {
     height: 8vh;
     width: 5vw;
     background-color: #2E2D2D;
-    margin: 0.2em;
-    border: 0.2em black solid;
-    border-radius: 1em;
+    margin: 0.5vh;
+    border: 0.2vw solid black;
+    border-radius: 1.2vw;
     font-weight: 900;
-    font-size: 1.2em;
+    font-size: 2vh;
     color: azure;
-    box-shadow: 0 0.1em #111111;
+    box-shadow: 0 0.3vh black;
     font-family: 'Russo One', sans-serif;
 }
 
